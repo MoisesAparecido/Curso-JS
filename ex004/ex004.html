@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados com JS</title>
+    <title>Interação com a Página</title>
     <style>
-        body { font: 12pt Arial; }
-        button { font-size: 12pt; padding: 30px; }
+        body {
+            font: 12pt Arial;
+        }
+        button {
+            padding: 12px;
+        }
     </style>
 </head>
 <body>
-    <h1>Trabalhando com Dados v2.0</h1>
-    <button onclick="inicio()">Clique para começar</button>
+    <h1>Um cadastro de pessoas</h1>
+    <button onclick="ação()">Cadastrar nova Pessoa</button>
     <section id="resultado">
-        <p>Aqui vai aparecer o resultado... </p>
+        <p>Pessoas que passaram por aqui...</p>
     </section>
     <script>
-        function inicio() {
-            let nome = window.prompt('Qual é o seu nome?')
-            let res = window.document.getElementById('resultado')
-            // Também funciona com o comando abaixo
-            // let res = window.document.querySelector('section#resultado')
-            res.innerHTML = `<p>Olá, <strong>${nome}</strong>! É um grande prazer te conhecer! &#x1F596;`
+        function ação() {
+            let nome = prompt('Nome da nova pessoa: ')
+            alert(`Vou cadastrar ${nome} logo abaixo.`)
+            // let res = window.document.getElementById('resultado')
+            let res = window.document.querySelector('section#resultado')
+            res.innerHTML += `<p>&#x1F596; Acabei de cadastrar <strong>${nome}</strong> no sistema.</p>`
         }
     </script>
 </body>
